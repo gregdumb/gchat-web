@@ -1,9 +1,9 @@
-import { connect, createStore } from 'undux'
+import { connect, createStore, withLogger } from 'undux'
 
 // Create a store with an initial value.
-export let store = createStore({
-    sessionKey: null,
+let store = withLogger(createStore({
+    sessionKey: '',
     sessionFetching: false,
-})
+}))
 
 export let withStore = connect(store);

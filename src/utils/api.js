@@ -14,10 +14,4 @@ api.sendRegistration = ({firstName, lastName, email, password}) => {
             password
         }
     )
-    .then(() => {
-
-    })
-    .catch(() => {
-
-    })
 }
