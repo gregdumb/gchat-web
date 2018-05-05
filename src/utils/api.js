@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-const apiURL = '/api/';
+const apiURL = '/api';
 
 const api = {};
 
 api.sendRegistration = ({firstName, lastName, email, password}) => {
-    axios.post(
-        `${apiURL}register`,
+    return axios.post(
+        `${apiURL}/account/register`,
         {
             firstName,
             lastName,
@@ -15,3 +15,5 @@ api.sendRegistration = ({firstName, lastName, email, password}) => {
         }
     )
 }
+
+export default api;

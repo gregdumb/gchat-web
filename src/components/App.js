@@ -5,8 +5,16 @@ import LoginForm from 'components/LoginForm';
 const App = withStore(({ store }) => 
 	<div>
 		<h1>gChat</h1>
-		<p>Session:{}</p>
-		<LoginForm />
+		{store.get('sessionKey') === '' ?
+			<div>
+				<LoginForm />
+			</div>
+		:
+			<div>
+				<p>Session key: {store.get('sessionKey')}</p>
+				{console.log("session key", store.get('sessionKey'))}
+			</div>
+		}
 	</div>
 )
 

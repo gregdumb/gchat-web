@@ -1,4 +1,5 @@
 import React from 'react';
+import { register } from 'utils/actions';
 
 const formContainer = {
 	width: 'fit-content',
@@ -39,6 +40,7 @@ const LoginForm = () => (
                     <p style={labelText} >Password</p>
                     <input type="password" name="password" />
                 </label>
+				<button onClick={(e) => { e.preventDefault(); register({}); }} >Register</button>
             </form>
         </div>
         <div style={formContainer} >
