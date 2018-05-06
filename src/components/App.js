@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withStore } from 'utils/store';
 import LoginForm from 'components/LoginForm';
 import Form from 'components/Form'
+import { register } from 'utils/actions';
 
 const form = [{
 	name: 'firstName',
@@ -13,24 +14,19 @@ const form = [{
 	name: 'lastName',
 	label: 'Last name',
 	type: 'text',
-	//defaultValue: 'breezy',
+	required: false,
 	validation: s => s.length > 3,
 },{
-	name: 'checkTest',
-	label: 'Check test',
-	type: 'checkbox',
-	defaultValue: true,
-},{
-	name: 'selectTest',
-	label: 'Select test',
-	type: 'select',
-	options: [{value: 'pick-me', display: 'Pick me'}, {value: 'or-me', display: 'Or me'}],
-	defaultValue: 'or-me',
-},{
-	name: 'dateTest',
-	label: 'Date test',
-	type: 'date',
+	name: 'email',
+	label: 'Email',
+	type: 'email',
 	required: true,
+}, {
+	name: 'password',
+	label: 'Password',
+	type: 'password',
+	required: true,
+	validation: s => s.length >= 4,
 } ]
 
 const App = withStore(({ store }) => 
@@ -38,7 +34,7 @@ const App = withStore(({ store }) =>
 		<h1>gChat</h1>
 		{store.get('sessionKey') === '' ?
 			<div>
-				<Form fields={form} onSubmit={(v) => console.log("Submitted", v)} />
+				<Form fields={form} onSubmit={(v) => register(v)} />
 			</div>
 		:
 			<div>

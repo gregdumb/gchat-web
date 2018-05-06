@@ -36,7 +36,7 @@ class Form extends React.Component {
 		
 		let valid = true;
 		if(field.required && !value) valid = false;
-		if(field.validation && valid) valid = field.validation(value);
+		if(field.validation && valid && value) valid = field.validation(value);
 		
 		console.log(field.name, 'is', valid);
 		
@@ -109,9 +109,7 @@ class Form extends React.Component {
 		const values = {...this.state.values};
 		const passed = this.validateAll();
 		
-		console.log(passed ? 'Pass' : 'DID NOT PASS');
-		
-		this.props.onSubmit(this.state.values);
+		if(passed) this.props.onSubmit(this.state.values);
 	}
 	
 	render() {
