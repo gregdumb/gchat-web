@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
 import { withStore } from 'utils/store';
 import LoginForm from 'components/LoginForm';
+import Form from 'components/Form'
+
+const form = [{
+	name: 'firstName',
+	label: 'First name',
+	type: 'text',
+	defaultValue: 'abcdefg',
+}]
 
 const App = withStore(({ store }) => 
 	<div>
 		<h1>gChat</h1>
 		{store.get('sessionKey') === '' ?
 			<div>
-				<LoginForm />
+				<Form fields={form} />
 			</div>
 		:
 			<div>
