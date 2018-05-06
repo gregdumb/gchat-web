@@ -7,13 +7,13 @@ const form = [{
 	name: 'firstName',
 	label: 'First name',
 	type: 'text',
-	defaultValue: 'greg',
+	//defaultValue: 'greg',
 	required: true,
 },{
 	name: 'lastName',
 	label: 'Last name',
 	type: 'text',
-	defaultValue: 'breezy',
+	//defaultValue: 'breezy',
 	validation: s => s.length > 3,
 },{
 	name: 'checkTest',
@@ -30,6 +30,7 @@ const form = [{
 	name: 'dateTest',
 	label: 'Date test',
 	type: 'date',
+	required: true,
 } ]
 
 const App = withStore(({ store }) => 

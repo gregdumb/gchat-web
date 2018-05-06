@@ -40,7 +40,7 @@ class Form extends React.Component {
 		
 		console.log(field.name, 'is', valid);
 		
-		return valid;
+		return valid === true;
 	}
 	
 	validateOne = (name) => {
@@ -51,7 +51,6 @@ class Form extends React.Component {
 		}
 		
 		const result = this.validate(field);
-		console.log('RESULT IS', result);
 		
 		this.setState({
 			validationResults: {

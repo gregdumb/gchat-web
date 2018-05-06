@@ -12,9 +12,10 @@ const Input = ({ field, value, valid, onChange, onBlur }) => {
 				name={field.name}
 				onChange={onChange}
 				onBlur={onBlur}
+				defaultValue={field.defaultValue}
 			>
 				{field.options.map(o => (
-					<option value={o.value} key={o.value} selected={o.value === field.defaultValue} >{o.display}</option>
+					<option value={o.value} key={o.value} >{o.display}</option>
 				))}
 			</select>
 		)
