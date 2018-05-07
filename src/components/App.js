@@ -8,15 +8,15 @@ import { registerForm, loginForm } from 'utils/forms';
 const App = withStore(({ store }) => 
 	<div>
 		<h1>gChat</h1>
-		{store.get('sessionKey') === '' ?
+		{store.get('session_key') === '' ?
 			<div>
 				<Form fields={registerForm} onSubmit={(v) => register(v)} />
 				<Form fields={loginForm} onSubmit={v => login(v)} />
 			</div>
 		:
 			<div>
-				<p>Session key: {store.get('sessionKey')}</p>
-				{console.log("session key", store.get('sessionKey'))}
+				<p>Session key: {store.get('session_key')}</p>
+				{console.log("session key", store.get('session_key'))}
 			</div>
 		}
 	</div>
