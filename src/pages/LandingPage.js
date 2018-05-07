@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 const LandingPage = () => (
     <div>
         <h1>GChat</h1>
-        <Link to="/about" >About</Link>
+        <p>Welcome to GChat</p>
+        <Link to="/login" >Login</Link>
     </div>
 )
 
