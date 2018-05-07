@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import { withStore } from 'utils/store';
-import LoginForm from 'components/LoginForm';
 import Form from 'components/Form'
-import { register, login } from 'utils/actions';
-import { registerForm, loginForm } from 'utils/forms';
+import LandingPage from 'pages/LandingPage';
+import LoginPage from 'pages/LoginPage';
 
-const App = withStore(({ store }) => 
+const App = () => (
 	<div>
+		<Route exact path="/" component={LandingPage} />
+		<Route path="/login" component={LoginPage} />
+	</div>
+)
+
+/*
+<div>
 		<h1>gChat</h1>
 		{store.get('session_key') === '' ?
 			<div>
@@ -22,6 +29,6 @@ const App = withStore(({ store }) =>
 			</div>
 		}
 	</div>
-)
+	*/
 
 export default App;
