@@ -16,4 +16,14 @@ api.sendRegistration = ({firstName, lastName, email, password}) => {
     )
 }
 
+api.sendLogin = ({email, password}) => {
+	return axios.post(
+		`${apiURL}/account/login`,
+		{
+			email,
+			password,
+		}
+	)
+}
+
 export default api;

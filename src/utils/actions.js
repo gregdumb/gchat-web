@@ -16,3 +16,16 @@ export const register = (registrationData) => {
 	
 }
 
+export const login = (loginData) => {
+	
+	api.sendLogin(loginData)
+	.then(res => {
+		store.set('sessionKey')(res.data.session.sessionKey);
+	})
+	.catch(err => {
+		console.log("Error logging in", err.response);
+	})
+	.finally(() => {
+		console.log("Done");
+	})
+}
