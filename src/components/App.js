@@ -5,8 +5,16 @@ import AutoLogin from './AutoLogin';
 import LandingPage from 'pages/LandingPage';
 import LoginPage from 'pages/LoginPage';
 
+const appStyle = {
+	position: 'absolute',
+	top: 0,
+	bottom: 0,
+	left: 0,
+	right: 0,
+}
+
 const App = () => (
-	<div>
+	<div style={appStyle} >
 		<AutoLogin />
 		<Route exact path="/" component={LandingPage} />
 		<Route path="/login" component={LoginPage} />
