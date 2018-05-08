@@ -1,7 +1,10 @@
 import React from 'react';
+import Page from 'components/Page';
 
 const ChatPage = ({}) => (
-    <div>
+    <Page requireAuthenticated >
         <h1>You are logged in!</h1>
-    </div>
+    </Page>
 )
+
+export default ChatPage;

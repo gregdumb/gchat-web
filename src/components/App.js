@@ -4,6 +4,7 @@ import { withStore } from 'utils/store';
 import AutoLogin from './AutoLogin';
 import LandingPage from 'pages/LandingPage';
 import LoginPage from 'pages/LoginPage';
+import ChatPage from 'pages/ChatPage';
 
 const appStyle = {
 	position: 'absolute',
@@ -18,6 +19,7 @@ const App = () => (
 		<AutoLogin />
 		<Route exact path="/" component={LandingPage} />
 		<Route path="/login" component={LoginPage} />
+		<Route path="/chat" component={ChatPage} />
 	</div>
 )
 
