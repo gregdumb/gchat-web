@@ -6,7 +6,7 @@ import Header from './Header';
 const Page = ({ children, store, withHeader=true, requireAuthenticated=false }) => (
 	<div>
 		{requireAuthenticated && store.get('session_user') === null ? <Redirect to='/login' /> : null }
-		{withHeader ? <Header /> : null}
+		{withHeader ? <Header showLogout={requireAuthenticated} /> : null}
 		{children}
 	</div>
 )

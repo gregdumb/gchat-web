@@ -5,6 +5,7 @@ const headerStyle = {
 	display: 'flex',
 	flexDirection: 'row',
 	alignItems: 'center',
+	justifyContent: 'space-between',
 	boxSizing: 'border-box',
 	width: '100%',
 	height: '80px',
@@ -12,11 +13,16 @@ const headerStyle = {
 	backgroundColor: 'lightblue',
 }
 
-const Header = ({}) => (
+const Header = ({ showLogout }) => (
 	<div style={headerStyle} >
 		<Link to="/" >
 			<h1>GChat</h1>
 		</Link>
+		{showLogout ? (
+			<Link to="/logout">Log out</Link>
+		) : (
+			<Link to="/login">Log in</Link>
+		)}
 	</div>
 )
 
