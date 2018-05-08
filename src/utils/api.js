@@ -30,4 +30,8 @@ api.sendSession = (sessionKey) => {
     return axios.get(`${apiURL}/account/continue`);
 }
 
+api.sendLogout = () => {
+	return axios.get(`${apiURL}/account/logout`);
+}
+
 export default api;

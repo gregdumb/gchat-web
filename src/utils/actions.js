@@ -76,3 +76,19 @@ export const continueSession = () => {
 		}
 	})
 }
+
+export const logout = () => {
+	console.log("Sending logout");
+	api.sendLogout()
+	.then(() => {})
+	.catch(() => {})
+	.finally(() => {
+		console.log('deleting cookie');
+		Cookies.remove('sessionKey');
+		store.update({
+			session_key: '',
+			session_user: null,
+			session_fetching: false,
+		})
+	})
+}

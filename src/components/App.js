@@ -4,6 +4,7 @@ import { withStore } from 'utils/store';
 import AutoLogin from './AutoLogin';
 import LandingPage from 'pages/LandingPage';
 import LoginPage from 'pages/LoginPage';
+import LogoutPage from 'pages/LogoutPage';
 import ChatPage from 'pages/ChatPage';
 
 const appStyle = {
@@ -19,6 +20,7 @@ const App = () => (
 		<AutoLogin />
 		<Route exact path="/" component={LandingPage} />
 		<Route path="/login" component={LoginPage} />
+		<Route path="/logout" component={LogoutPage} />
 		<Route path="/chat" component={ChatPage} />
 	</div>
 )
