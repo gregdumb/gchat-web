@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { withStore } from 'utils/store';
-import Form from 'components/Form'
+import AutoLogin from './AutoLogin';
 import LandingPage from 'pages/LandingPage';
 import LoginPage from 'pages/LoginPage';
 
 const App = () => (
 	<div>
+		<AutoLogin />
 		<Route exact path="/" component={LandingPage} />
 		<Route path="/login" component={LoginPage} />
 	</div>
