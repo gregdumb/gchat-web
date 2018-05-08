@@ -26,4 +26,8 @@ api.sendLogin = ({email, password}) => {
 	)
 }
 
+api.sendSession = (sessionKey) => {
+    return axios.get(`${apiURL}/account/continue`);
+}
+
 export default api;

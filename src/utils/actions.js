@@ -1,3 +1,4 @@
+import Cookies from 'js-cookie';
 import { store } from 'utils/store';
 import api from 'utils/api';
 
@@ -45,5 +46,33 @@ export const login = (loginData) => {
 	})
 	.finally(() => {
 		store.set('session_fetching')(false);
+	})
+}
+
+export const continueSession = () => {
+	const sessionKey = Cookies.get('sessionKey');
+
+	if(!sessionKey) {
+		console.log("Autologin: no session key cookie found");
+		return;
+	}
+
+	console.log("Autologin: attempting with key", sessionKey);
+
+	api.sendSession(sessionKey)
+	.then(res => {
+		console.log("Autologin: got user data for", res.data.user.firstName);
+		store.update({
+			session_key: res.data.session.sessionKey,
+			session_user: res.data.user,
+		})
+	})
+	.catch(err => {
+		console.log("Autologin: error");
+		if(err.response.status === 400) {
+			// Cookie must not be valid, delete it
+			Cookies.remove('sessionKey');
+			console.log("Autologin: deleting invalid cookie");
+		}
 	})
 }

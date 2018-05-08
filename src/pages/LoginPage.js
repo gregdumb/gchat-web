@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import { withStore } from 'utils/store';
 import LoginForm from 'components/LoginForm';
 
