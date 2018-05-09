@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Input from './Input';
+import Button from 'material-ui/Button';
 
 class Form extends React.Component {
 	
@@ -125,7 +126,7 @@ class Form extends React.Component {
 						key={field.name}
 					/>
 				))}
-				<button>Submit</button>
+				<Button onClick={this.handleSubmit} >Submit</Button>
 			</form>
 		);
 	}

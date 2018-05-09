@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { withStore } from 'utils/store';
+
+import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
+import green from 'material-ui/colors/green';
+
 import AutoLogin from './AutoLogin';
 import LandingPage from 'pages/LandingPage';
 import LoginPage from 'pages/LoginPage';
@@ -13,6 +17,12 @@ const appStyle = {
 	left: 0,
 	right: 0,
 }
+
+const theme = createMuiTheme({
+	palette: {
+		primary: green,
+	}
+})
 
 const App = () => (
 	<div style={appStyle} >

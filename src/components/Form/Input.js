@@ -1,4 +1,5 @@
 import React from 'react';
+import TextField from 'material-ui/TextField';
 
 const Input = ({ field, value, valid, onChange, onBlur }) => {
 	
@@ -31,7 +32,10 @@ const Input = ({ field, value, valid, onChange, onBlur }) => {
 	}
 	else {
 		input = (
-			<input 
+			<TextField 
+				label={field.label}
+				error={!valid}
+
 				name={field.name}
 				type={field.type}
 				value={value}
@@ -43,10 +47,7 @@ const Input = ({ field, value, valid, onChange, onBlur }) => {
 	}
 	
 	return(
-		<label style={style} >
-			{field.label}
-			{input}
-		</label>
+		input
 	)
 }
 
