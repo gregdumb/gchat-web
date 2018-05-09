@@ -25,12 +25,14 @@ const theme = createMuiTheme({
 })
 
 const App = () => (
-	<div style={appStyle} >
-		<AutoLogin />
-		<Route exact path="/" component={LandingPage} />
-		<Route path="/login" component={LoginPage} />
-		<Route path="/chat" component={ChatPage} />
-	</div>
+	<MuiThemeProvider theme={theme} >
+		<div style={appStyle} >
+			<AutoLogin />
+			<Route exact path="/" component={LandingPage} />
+			<Route path="/login" component={LoginPage} />
+			<Route path="/chat" component={ChatPage} />
+		</div>
+	</MuiThemeProvider>
 )
 
 /*
