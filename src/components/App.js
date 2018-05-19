@@ -3,7 +3,8 @@ import { Route } from 'react-router-dom';
 import { withStore } from 'utils/store';
 
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
-import green from 'material-ui/colors/green';
+import purple from 'material-ui/colors/purple';
+import amber from 'material-ui/colors/amber';
 
 import AutoLogin from './AutoLogin';
 import LandingPage from 'pages/LandingPage';
@@ -21,7 +22,8 @@ const appStyle = {
 
 const theme = createMuiTheme({
 	palette: {
-		primary: green,
+		primary: purple,
+		secondary: amber,
 	}
 })
 
